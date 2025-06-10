@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    overflow: hidden;
+} */
+
+/* Hide scrollbar globally but keep scroll functionality */
+body {
+    overflow-y: scroll;              /* Enable vertical scrolling */
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none;        /* Internet Explorer 10+ */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;                   /* Chrome, Safari, and Opera */
+  }
+  
+  /* Target scrollbars globally or on a specific element */
+body::-webkit-scrollbar {
+    width: 2px;            /* Vertical scrollbar width */
+    height: 8px;           /* Horizontal scrollbar height */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #f1f1f1;   /* Scrollbar track color */
+    border-radius: 10px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #888;      /* Scrollbar thumb color */
+    border-radius: 10px;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: #555;      /* Thumb hover color */
+  }
+  

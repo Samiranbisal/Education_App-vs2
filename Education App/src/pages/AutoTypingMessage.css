@@ -1,0 +1,44 @@
+/* Layout */
+.auto-type-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* background-color: #0f0f0f; */
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Text Style */
+.auto-type-text {
+  /* color: #ffffff; */
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: pre-wrap;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.auto-type-cursor {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  color: #00ffcc;
+}
+
+/* Slide animations */
+.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-out {
+  opacity: 0;
+  transform: translateY(-30px);
+}

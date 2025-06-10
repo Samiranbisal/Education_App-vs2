@@ -1,0 +1,144 @@
+.group-home-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.group-home-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.group-home-container input:focus {
+  border-color: #1e40af;
+  outline: none;
+}
+
+.group-home-container button {
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.group-home-container button:hover {
+  background-color: #1c3aa9;
+}
+
+.qr-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eef2ff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+.qr-box p {
+  font-size: 14px;
+  color: #333;
+  margin-top: 12px;
+  word-break: break-word;
+}
+
+.qr-box button {
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.qr-box button:hover {
+  background-color: #1c3aa9;
+}
+
+@media (max-width: 768px) {
+  .group-home-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .group-home-container h2 {
+    font-size: 20px;
+  }
+
+  .group-home-container input {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .group-home-container button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .qr-box {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .qr-box p {
+    font-size: 13px;
+  }
+}
+
+.qr-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eef2ff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  word-break: break-word;
+}
+
+.qr-box button {
+  margin: 5px 0;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .qr-box {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .qr-box p {
+    font-size: 13px;
+  }
+
+  .qr-box button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

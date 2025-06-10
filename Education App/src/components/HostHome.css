@@ -1,0 +1,74 @@
+/* Home.css */
+
+.home-container {
+  padding: 40px;
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.home-input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.home-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+.home-error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.preview-box {
+  background: #f9f9f9;
+  padding: 12px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 20px;
+    margin: 40px 10px;
+  }
+
+  .home-input {
+    font-size: 14px;
+  }
+
+  .home-button {
+    font-size: 14px;
+  }
+
+  .preview-box {
+    font-size: 13px;
+  }
+}
