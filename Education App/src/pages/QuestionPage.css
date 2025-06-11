@@ -1,0 +1,231 @@
+/* Root container */
+.qa-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Question form */
+.question-form textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.question-form button {
+  padding: 8px 14px;
+  font-size: 1rem;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.question-form button:hover {
+  background-color: #1275d3;
+}
+
+/* Question card */
+.question-card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+/* Answer card */
+.answer-card {
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.answer-card.teacher {
+  background-color: #e6f7ff;
+  border-left: 4px solid #1890ff;
+}
+
+/* Metadata */
+.meta-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 4px 0;
+}
+
+/* Buttons row */
+.action-buttons button {
+  margin-right: 10px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  opacity: 0.9;
+}
+
+button.edit {
+  background-color: #ffecb3;
+}
+
+button.delete {
+  background-color: #ffcdd2;
+}
+
+button.reply {
+  background-color: #c8e6c9;
+}
+
+/* Answer input */
+.answer-input {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.answer-input textarea {
+  width: 100%;
+  padding: 8px;
+  resize: vertical;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .question-card,
+  .answer-card,
+  .answer-input textarea {
+    margin-left: 0 !important;
+  }
+
+  .qa-container {
+    padding: 10px;
+  }
+
+  .action-buttons button {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+  }
+}
+
+
+/* QuestionPage.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 5px 5px 10px 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1890ff;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #147bd1;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.question-card {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.question-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.answer-card {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.answer-card.teacher {
+  background-color: #e6f7ff;
+  border-left: 4px solid #1890ff;
+}
+
+.answer-meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: 5px;
+}
+
+.reply-box {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+
+  .answer-card {
+    margin-left: 10px;
+  }
+
+  .reply-box {
+    margin-left: 10px;
+  }
+}

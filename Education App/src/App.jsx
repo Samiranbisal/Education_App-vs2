@@ -21,6 +21,7 @@ import HostHome from './components/HostHome';
 import HostRoom from './components/HostRoom';
 import HostJoin from './components/HostJoin';
 import ChatPage from './pages/ChatPage';
+import QuestionPage from './pages/QuestionPage';
 
 // Components
 import Header from "./components/Header";
@@ -70,14 +71,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* <Route
-            path="/one-to-one-chat"
+          <Route
+            path="/question-page"
             element={
               <ProtectedRoute>
-                <OnetoOneAndGroupChat />
+                <QuestionPage />
               </ProtectedRoute>
             }
-          /> */}
+          />
           <Route
             path="/host-streaming"
             element={

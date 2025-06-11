@@ -7,9 +7,9 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-container">
         <div className="footer-col">
-          <h4>About EduSite</h4>
+          <h4>About Friends Wave</h4>
           <p>
-            EduSite is a modern platform for online education, empowering
+            Friends Wave is a modern platform for online education, empowering
             students and teachers with rich tools and courses.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p>Email: support@edusite.com</p>
+          <p>Email: Friends@Wave.com</p>
           <p>Phone: +91 93824 12822</p>
           <p>Address: Kolkata, West Bengal, India</p>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} EduSite. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Friends Wave. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -3,10 +3,13 @@ import './AutoTypingMessage.css';
 
 const AutoTypingMessage = ({
   messages = [
-    "Welcome to the Live Streaming App 🎥",
+    "Welcome to Friends Wave.com 🎥",
+    "Join the community and start watching together! 🎉",
     "Explore top-rated TV Shows 🌟",
     "Stream live with friends 🧑‍🤝‍🧑",
-    "Enjoy trailers, favorites & more 🎬"
+    "Enjoy trailers, favorites movics 🎬",
+    "Discover new shows and movies every day! 🍿",
+    
   ],
   speed = 80,
   pause = 1500,

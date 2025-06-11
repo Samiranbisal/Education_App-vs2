@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="nav-container">
-        <Link to="/dashboard" className="logo">EduSite</Link>
+        <Link to="/dashboard" className="logo">Friends Wave</Link>
 
         <button
           className="menu-toggle"

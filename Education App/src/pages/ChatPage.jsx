@@ -165,7 +165,7 @@ export default function ChatPage() {
 
   return (
     <div className="chat-container">
-      <h2>Private Chat</h2>
+      <h2>Chat</h2>
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`msg ${msg.sender}`}>

@@ -536,8 +536,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const API_KEYS = [
-  // 'AIzaSyCkMZz4ctl_RSAQ-5LfCWuHjqZi835n5ww',
-  // 'AIzaSyA2cj1bomRx_XqyOlIpFZ24fywYux03j6E',
+  'AIzaSyCkMZz4ctl_RSAQ-5LfCWuHjqZi835n5ww',
+  'AIzaSyA2cj1bomRx_XqyOlIpFZ24fywYux03j6E',
   // 'AIzaSyCkMZz4ctl_RSAQ-5LfCWuHjqZi835n5ww2',
   // 'AIzaSyCkMZz4ctl_RSAQ-5LfCWuHjqZi835n5ww3',
 ];

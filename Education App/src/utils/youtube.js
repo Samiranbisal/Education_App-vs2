@@ -10,6 +10,7 @@
 
 
 const YOUTUBE_API_KEY = 'AIzaSyD1bfDO_0y3o_N6iL4DJKXzS1_Pl3H9ACk';
+// const YOUTUBE_API_KEY = 'AIzaSyD1bfDO_0y39ACk';
 
 export const fetchTrailer = async (query) => {
   try {
