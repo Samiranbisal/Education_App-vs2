@@ -97,6 +97,9 @@ const LearningPlatform = () => {
       case "QuestionPage":
         navigate('/question-page');
         break;
+      case "Social Media":
+        navigate('/social-media');
+        break;
       default:
         break;
     }
@@ -131,6 +134,12 @@ const LearningPlatform = () => {
           icon={<FaComments />}
           bgColor="#3dbfd9"
           onClick={() => handleCardClick("One to one Chat")}
+        />
+        <LearningCard
+          title="Social Media"
+          icon={<FaUsers />}
+          bgColor="#ff6f61"
+          onClick={() => handleCardClick("Social Media")}
         />
         <LearningCard
           title="Live streaming"

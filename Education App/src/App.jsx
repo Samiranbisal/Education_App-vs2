@@ -22,6 +22,7 @@ import HostRoom from './components/HostRoom';
 import HostJoin from './components/HostJoin';
 import ChatPage from './pages/ChatPage';
 import QuestionPage from './pages/QuestionPage';
+import SocialMediaPage from './pages/SocialMediaPage';
 
 // Components
 import Header from "./components/Header";
@@ -142,6 +143,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ChatPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/social-media"
+            element={
+              <ProtectedRoute>
+                <SocialMediaPage />
               </ProtectedRoute>
             }
           />

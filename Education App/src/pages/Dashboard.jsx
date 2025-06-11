@@ -8,6 +8,7 @@ import YouTubePage from './ YouTubePage';
 import AutoTypingMessage from './AutoTypingMessage';
 import ChatPage from './ChatPage';
 import QuestionPage from './QuestionPage';
+import SocialMediaPage from './SocialMediaPage';
 
 
 const Dashboard = () => {
@@ -31,7 +32,7 @@ const Dashboard = () => {
         <br/>
         <YouTubePage/>
         <br/>
-        {/* <QuestionPage/> */}
+        {/* <SocialMediaPage/> */}
     </>
   )
 }

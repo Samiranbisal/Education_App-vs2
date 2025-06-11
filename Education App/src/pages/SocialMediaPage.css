@@ -1,0 +1,119 @@
+/* SocialMediaPage.css */
+.social-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.social-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.upload-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.post-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.post-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.media {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.reaction-button,
+.comment-button {
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.comment-button.cancel {
+  background-color: #999;
+  color: white;
+}
+
+.comment-button.delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.icon.whatsapp {
+  color: #25d366;
+}
+
+.owner-controls {
+  margin-top: 10px;
+}
+
+.comment-section {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.comment {
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: gray;
+}
