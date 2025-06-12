@@ -43,6 +43,10 @@ const SocialMediaPage = () => {
   const [editingPostId, setEditingPostId] = useState(null);
   const [editedTitle, setEditedTitle] = useState("");
   const [editedContent, setEditedContent] = useState("");
+  const [filter, setFilter] = useState("all");
+  const [searchInput, setSearchInput] = useState("");
+  const [allUsers, setAllUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -75,6 +79,14 @@ const SocialMediaPage = () => {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "users"), (snapshot) => {
+      const users = snapshot.docs.map((doc) => ({ uid: doc.id, ...doc.data() }));
+      setAllUsers(users);
+    });
+    return () => unsubscribe();
+  }, []);
+
   const handleReaction = async (postId, field) => {
     const postRef = doc(db, "posts", postId);
     await updateDoc(postRef, { [field]: increment(1) });
@@ -82,13 +94,11 @@ const SocialMediaPage = () => {
 
   const handleCommentSubmit = async (postId, text) => {
     if (!text || !currentUser) return;
-
     const commentData = {
       user: currentUser.username,
       text,
       createdAt: new Date().toISOString(),
     };
-
     const postRef = doc(db, "posts", postId);
     await updateDoc(postRef, {
       comments: arrayUnion(commentData),
@@ -118,6 +128,10 @@ const SocialMediaPage = () => {
       const mediaUrl = res.data.secure_url;
       const type = file.type.startsWith("video") ? "video" : "image";
 
+      const taggedUsernames = Array.from(
+        new Set(title.match(/@(\w+)/g)?.map((tag) => tag.slice(1)) || [])
+      );
+
       const newPost = {
         title,
         user: {
@@ -134,6 +148,7 @@ const SocialMediaPage = () => {
         loveCount: 0,
         funnyCount: 0,
         comments: [],
+        tags: taggedUsernames,
         createdAt: new Date().toISOString(),
       };
 
@@ -178,6 +193,51 @@ const SocialMediaPage = () => {
 
   return (
     <div className="social-container">
+      <div className="search-section">
+        <input
+          type="text"
+          value={searchInput}
+          onChange={(e) => {
+            const value = e.target.value;
+            setSearchInput(value);
+            setFilteredUsers(
+              allUsers.filter(
+                (user) =>
+                  user.username &&
+                  user.username.toLowerCase().includes(value.toLowerCase())
+              )
+            );
+          }}
+          placeholder="Search or tag user by username"
+          className="social-input"
+        />
+
+        {searchInput.length >= 2 && filteredUsers.length > 0 && (
+          <div className="user-suggestions">
+            {filteredUsers.map((user) => (
+              <div
+                key={user.uid}
+                className="suggestion"
+                onClick={() => {
+                  setTitle((prev) => prev + ` @${user.username}`);
+                  setSearchInput("");
+                  setFilteredUsers([]);
+                  setFilter(user.uid);
+                }}
+              >
+                🔍 @{user.username} ({user.role}) — View Posts
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {filter && filter !== "all" && (
+        <button onClick={() => setFilter("all")} className="comment-button clear-filter">
+          Clear User Filter
+        </button>
+      )}
+
       <input
         type="text"
         value={title}
@@ -194,7 +254,18 @@ const SocialMediaPage = () => {
       </label>
       {uploading && <p>Uploading...</p>}
 
-      {posts.map((post) => (
+      <div className="filter-buttons">
+        <button onClick={() => setFilter("all")} className={`comment-button ${filter === "all" ? "active-filter" : ""}`}>All</button>
+        <button onClick={() => setFilter("image")} className={`comment-button ${filter === "image" ? "active-filter" : ""}`}>Images Only</button>
+        <button onClick={() => setFilter("video")} className={`comment-button ${filter === "video" ? "active-filter" : ""}`}>Reels Only</button>
+      </div>
+
+      {posts.filter((post) => {
+        if (filter === "image") return post.type === "image";
+        if (filter === "video") return post.type === "video";
+        if (filter && filter !== "all") return post.user.uid === filter;
+        return true;
+      }).map((post) => (
         <div key={post.id} className="post-card">
           <div className="post-header">
             {post.user.avatar ? (
@@ -234,7 +305,15 @@ const SocialMediaPage = () => {
             </>
           ) : (
             <>
-              <h3>{post.title}</h3>
+              <h3>
+                {post.title.split(" ").map((word, i) =>
+                  word.startsWith("@") ? (
+                    <span key={i} className="tagged">{word} </span>
+                  ) : (
+                    word + " "
+                  )
+                )}
+              </h3>
               <p>{post.content}</p>
             </>
           )}
