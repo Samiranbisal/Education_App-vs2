@@ -9,6 +9,9 @@ import AutoTypingMessage from './AutoTypingMessage';
 import ChatPage from './ChatPage';
 import QuestionPage from './QuestionPage';
 import SocialMediaPage from './SocialMediaPage';
+import AudienceJoin from '../components/AudienceJoin';
+import CohostJoin from '../components/CohostJoin';
+import GroupInvitePage from './GroupInvitePage';
 
 
 const Dashboard = () => {
@@ -33,6 +36,11 @@ const Dashboard = () => {
         <YouTubePage/>
         <br/>
         {/* <SocialMediaPage/> */}
+        {/* <AudienceJoin/> */}
+        <br/>
+        {/* <CohostJoin/> */}
+        <br/>
+        {/* <GroupInvitePage/> */}
     </>
   )
 }

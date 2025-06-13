@@ -3,7 +3,7 @@ import './AutoTypingMessage.css';
 
 const AutoTypingMessage = ({
   messages = [
-    "Welcome to Friends Wave.com 🎥",
+    "Welcome to Friend Waves.com 🎥",
     "Join the community and start watching together! 🎉",
     "Explore top-rated TV Shows 🌟",
     "Stream live with friends 🧑‍🤝‍🧑",

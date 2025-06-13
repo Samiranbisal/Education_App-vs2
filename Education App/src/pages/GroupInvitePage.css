@@ -1,0 +1,35 @@
+.invite-page-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.invite-page-container h2 {
+  margin-bottom: 16px;
+}
+
+.invite-page-container input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.invite-page-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.invite-page-container button:hover {
+  background-color: #0056b3;
+}

@@ -58,7 +58,7 @@ export default function Contact() {
                 message: "Invalid email address",
               },
             })}
-            placeholder="you@friendswave.com"
+            placeholder="you@friendwaves.com"
           />
           {errors.email && <span className="error">{errors.email.message}</span>}
         </label>

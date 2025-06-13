@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './HostHome.css'; // ✅ Import CSS
+import './HostHome.css'; // ✅ Import your CSS
 
 const Home = () => {
   const [roomId, setRoomId] = useState('');
@@ -10,13 +10,17 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const generateRoomId = () => 'room-' + Math.random().toString(36).substr(2, 6);
-    setRoomId(generateRoomId());
-  }, []);
+    if (role === 'host') {
+      const generateRoomId = () => 'room-' + Math.random().toString(36).substr(2, 6);
+      setRoomId(generateRoomId());
+    } else {
+      setRoomId('');
+    }
+  }, [role]);
 
   const handleJoin = () => {
-    if (!roomId.trim() || !name.trim()) {
-      setError('Room ID and Name are required.');
+    if (!name.trim() || (!roomId.trim() && role !== 'host')) {
+      setError('Please fill in all fields.');
       return;
     }
 
@@ -29,13 +33,15 @@ const Home = () => {
     <div className="home-container">
       <h2 style={{ marginBottom: 20 }}>🎥 Join Live Stream</h2>
 
-      <input
-        type="text"
-        placeholder="Enter Room ID"
-        value={roomId}
-        onChange={(e) => setRoomId(e.target.value)}
-        className="home-input"
-      />
+      {role !== 'host' && (
+        <input
+          type="text"
+          placeholder="Enter Room ID"
+          value={roomId}
+          onChange={(e) => setRoomId(e.target.value)}
+          className="home-input"
+        />
+      )}
 
       <input
         type="text"

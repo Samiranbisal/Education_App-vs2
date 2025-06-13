@@ -68,7 +68,7 @@ export default function ChatPage() {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
           "HTTP-Referer": "http://localhost:5173",
           "X-Title": "Education App",
           "Content-Type": "application/json"

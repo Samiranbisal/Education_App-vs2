@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
-import "./GroupHomeCall.css"; // Make sure this file includes the CSS below
-
+import "./GroupHomeCall.css";
 import { QRCode } from "react-qrcode-logo";
 
 const generateRoomId = () => {
@@ -15,6 +13,7 @@ const generateRoomId = () => {
 const GroupHomeCall = () => {
   const [roomId, setRoomId] = useState("");
   const [username, setUsername] = useState("");
+  const [joinLink, setJoinLink] = useState("");
   const navigate = useNavigate();
   const qrRef = useRef();
 
@@ -31,6 +30,28 @@ const GroupHomeCall = () => {
     }
     navigate(`/group-video-call/${roomId}`, { state: { username } });
   }, [roomId, username, navigate]);
+
+  const handleJoinFromLink = () => {
+    if (!username.trim()) {
+      alert("Please enter your name");
+      return;
+    }
+
+    try {
+      const url = new URL(joinLink);
+      const parts = url.pathname.split("/");
+      const roomIdFromLink = parts[parts.length - 1];
+      if (roomIdFromLink) {
+        navigate(`/group-video-call/${roomIdFromLink}`, {
+          state: { username },
+        });
+      } else {
+        alert("Invalid link format");
+      }
+    } catch (err) {
+      alert("Invalid link");
+    }
+  };
 
   const handleDownloadQR = () => {
     const canvas = qrRef.current.querySelector("canvas");
@@ -65,6 +86,8 @@ const GroupHomeCall = () => {
         onChange={(e) => setRoomId(e.target.value)}
       />
 
+      <button onClick={handleJoinRoom}>Join</button>
+
       {/* QR Code Section */}
       <div className="qr-box">
         <div ref={qrRef} style={{ marginBottom: "10px" }}>
@@ -75,7 +98,17 @@ const GroupHomeCall = () => {
         <button onClick={handleCopyURL}>Copy URL</button>
       </div>
 
-      <button onClick={handleJoinRoom}>Join</button>
+      {/* Join via Pasted Link */}
+      <div className="join-link-section">
+        <h3>Paste Link to Join Room</h3>
+        <input
+          type="text"
+          placeholder="Paste full room link here"
+          value={joinLink}
+          onChange={(e) => setJoinLink(e.target.value)}
+        />
+        <button onClick={handleJoinFromLink}>Join via Link</button>
+      </div>
     </div>
   );
 };
